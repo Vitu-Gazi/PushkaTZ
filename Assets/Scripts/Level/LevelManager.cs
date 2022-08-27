@@ -9,7 +9,7 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private GameObject[] levels;
 
-    private PrefsValue<int> currentLevel;
+    private static PrefsValue<int> currentLevel;
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class LevelManager : Singleton<LevelManager>
 
         if (currentLevel.Value >= levels.Length)
         {
-            currentLevel.Value = 0;
+            SceneManager.LoadScene(0);
         }
 
         levelText.text = "Current Level: " + (currentLevel.Value + 1).ToString();
@@ -29,9 +29,24 @@ public class LevelManager : Singleton<LevelManager>
     {
         if (value)
         {
+            if (currentLevel.Value == MenuLevelManager.openLevels.Value)
+            {
+                MenuLevelManager.openLevels.Value++;
+            }
+
             currentLevel.Value++;
         }
 
         EndGameController.Instance.EndGame(value);
+    }
+    public void GoToHome()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public static void SetCurrentLevel(int value)
+    {
+        currentLevel = new PrefsValue<int>("CurrentLevel", 0);
+        currentLevel.Value = value;
     }
 }

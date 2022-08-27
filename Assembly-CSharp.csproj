@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\Level\BallDestroy.cs" />
     <Compile Include="Assets\Scripts\UI\BasketUI.cs" />
+    <Compile Include="Assets\Scripts\MenuLevelManager.cs" />
     <Compile Include="Assets\Scripts\GameController\IPointer.cs" />
     <Compile Include="Assets\Scripts\GameController\EndGameController.cs" />
     <Compile Include="Assets\Scripts\CanonAndBalls\CanonShot.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\CanonAndBalls\Ball.cs" />
     <Compile Include="Assets\Scripts\GameController\InputRegister.cs" />
     <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\UI\LevelButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
